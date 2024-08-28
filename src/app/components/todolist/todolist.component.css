@@ -1,0 +1,105 @@
+/* Main container styling */
+.main-container {
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: var(--color3);
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensures no overflow outside the container */
+}
+
+/* Styling for the todo content container */
+.todo-content-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 430px; /* Fixed height to maintain rectangular box */
+  overflow: auto; /* Show scrollbar only when necessary */
+  padding: 10px; /* Padding for better spacing */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  border-top: 1px solid var(--color2); /* Border for separation */
+}
+
+/* Header styling */
+.main-container h3 {
+  margin: 0; /* Remove default margin */
+  padding: 10px;
+  font-weight: 600;
+  color: var(--color1);
+  border-bottom: 1px solid var(--color2); /* Border for separation */
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px; /* Slightly thinner scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color1);
+  border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color3); /* Track color */
+}
+
+/* View actions section */
+.view-actions {
+  display: flex;
+  background-color: var(--color2);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--color2); /* Border for separation */
+}
+
+/* Button container styling */
+.view-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Button styling */
+.view-buttons button {
+  appearance: none;
+  background-color: bisque;
+  border: 1px solid transparent; /* Border for better visual feedback */
+  padding: 8px 16px; /* Larger padding for better click area */
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: var(--color1); /* Default text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.view-buttons button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover */
+}
+
+.view-buttons button.active {
+  color: white;
+  background-color: var(--color1);
+}
+/* Export CSV button styling */
+#export-csv-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Align with other buttons */
+  font-size: 0.9rem; /* Font size */
+  margin: 4px 2px; /* Margins */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.2s; /* Transitions */
+}
+
+#export-csv-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+#export-csv-button:active {
+  transform: scale(0.98); /* Slightly smaller on click */
+}

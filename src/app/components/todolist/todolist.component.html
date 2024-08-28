@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<app-addtodo (newTodo)="addApiTodo($event)"></app-addtodo>
+<div class="main-container">
+  <div class="view-actions">
+    <h3>Todos: {{arraySize}}</h3> 
+    <div class="view-buttons">
+      <button [class.active]="currentView === 'undone'" (click)="setView('undone')">UNDONE</button>
+      <button [class.active]="currentView === 'done'" (click)="setView('done')">DONE</button>
+      <button class="export-csv-button" (click)="exportToCSV()">DOWNLOAD COMPLETED TASK</button>
+    </div>
+  </div>
+
+  <div class="todo-content-container">
+    <app-todo-content
+      *ngFor="let todo of todos"
+      [todo]="todo"
+      (deleteTodo)="deleteApiTodo(todo)"
+      (finishTodo)="finishApiTodo(todo)"
+      (reopenTodo)="reopenApiTodo(todo)"
+    ></app-todo-content>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div #todolistContainer id="todolist-container" [ngStyle]="{'background-color': filteringCategories(todo.category)}">
+  <div style="list-style-type: none;" id="todolist">
+    <div class="todo-item" [ngStyle]="{'background-color': todolistContainer.style.backgroundColor}">
+      <input type="text" value="{{todo.title}}" id="todo-text" readonly>
+
+      <!-- Display the date -->
+      <div id="todo-date">
+        <span>Complete by: {{todo.date}}</span>
+      </div>
+
+      <div id="action-buttons">
+        <fa-icon class="fa-return" *ngIf="todo.done" [icon]="faArrow" (click)="reopeningTodo(todo)"></fa-icon>
+        <fa-icon *ngIf="!todo.done" class="fa-check" [icon]="faCheck" (click)="finishingTodo(todo)"></fa-icon>
+        <fa-icon class="fa-times" [icon]="faTimes" (click)="deletingTodo(todo)"></fa-icon>
+      </div>
+
+
+      
+    </div>
+  </div>
+</div>

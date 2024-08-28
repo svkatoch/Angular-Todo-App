@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgcolor: #266b9a;
+    --containercolor: #be25e1;
+    --color2: #5FCDD9;
+    --color3: #5FCDD9;
+    --color4: #fff;
+}
+
+body {
+    background-color: var(--bgcolor);
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 600;
+}
+
+#todo-container {
+    width: 330px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: var(--color3);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#todo-form {
+    padding: .6rem;
+}
+
+fieldset {
+    border: none;
+}
+
+#add-todo input[type="text"] {
+    padding-left: .5rem;
+    width: 60%;
+}
+
+#add-todo input[type="date"] {
+    width: 38%;
+    margin-left: .5rem;
+    background-color: #fff;
+    border-radius: 3px;
+    padding-left: .2rem;
+}
+
+#add-todo select {
+    background-color: var(--containercolor);
+    height: 25.6px;
+    color: var(--color4);
+    border: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    appearance: button;
+    outline: none;
+    padding-left: .2rem;
+    width: 35%;
+}
+
+#add-todo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+#add-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+#submit-todo {
+    padding: .3rem;
+    width: 30%;
+}
+
+#advice-form {
+    font-size: small;
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+#todolist-container {
+    margin: 0 auto;
+    width: 320px;
+    background-color: var(--color4);
+    padding: .5rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input {
+    border: none;
+    appearance: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+#buttons button {
+    height: .5rem;
+    width: .5rem;
+}
+
+@media (max-width: 500px) {
+    #todo-container {
+        width: 330px;
+        padding: .3rem 1rem;
+    }
+
+    #add-todo {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    #add-todo input[type="text"] {
+        width: 60%;
+    }
+
+    #add-todo input[type="date"] {
+        width: 38%;
+        margin-left: .5rem;
+    }
+
+    input#todo-text {
+        background: #fff;
+    }
+
+    #todolist-container li {
+        width: 100%;
+        padding-left: 22px;
+    }
+
+    input#todo-text {
+        width: 74%;
+    }
+
+    #action-buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 2rem;
+    }
+}

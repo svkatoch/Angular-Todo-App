@@ -1,0 +1,58 @@
+#action-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 3rem;
+  height: 25.6px;
+  background-color: var(--color4);
+  border-radius: 10%;
+}
+
+#action-buttons fa-icon {
+  cursor: pointer;
+}
+#todolist-container{
+  margin-bottom: 10px;
+}
+.todo-item {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  background-color: var(--color4);
+  position: relative; /* Needed for absolute positioning of the date */
+}
+
+.todo-item input {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  padding: 0.5rem;
+  width: 100%; /* Adjust width to fill container */
+  height: 25.6px;
+  border: none;
+  background-color: #fff;
+}
+
+.todo-item input:focus {
+  outline: none;
+}
+
+#todo-date {
+  font-family: 'Merriweather', serif;
+  font-style: normal; /* Default font style */
+  font-size: 0.9rem;
+  color: black; /* A lighter color for the date */
+  margin-top: 0.5rem; /* Space above the date */
+}
+
+.todo-item .fa-check, .fa-return {
+  color: blue;
+  cursor: pointer;
+}
+
+.todo-item .fa-times {
+  color: red;
+  cursor: pointer;
+}
+

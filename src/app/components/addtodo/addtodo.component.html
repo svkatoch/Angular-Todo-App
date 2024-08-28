@@ -1,0 +1,38 @@
+<div id="todo-container">
+  <h1>Task Management Application</h1>
+
+  <form [formGroup]="form" id="todo-form">
+    <fieldset id="new-todo">
+        <div id="add-todo">
+          <input type="text"
+          placeholder="What to do next?" 
+          formControlName="title" required 
+          maxlength="30" #inputtask id="input-task">
+         
+          <select name="Categories" id="category" formControlName="category" required>
+            <option class="op1" value="High">1 - High</option>
+            <option value="Medium" class="op1">2 - Medium</option>
+            <option value="Low" class="op1">3 - Low</option>
+          </select>
+          
+          <!-- New Date Input Field -->
+          <input type="date" id="task-date" formControlName="date" required>
+
+        </div>
+        <div id="add-button">
+          <input type="button" id="submit-todo" value="Add Todo" [disabled]="form.invalid" (click)="addNewTodo()">
+        </div>
+
+      </fieldset>
+    </form>
+    
+    <span id="advice-form" *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">
+        <fa-icon [icon]="faExclamation"></fa-icon>
+        Must contain at least 3 characters
+    </span>
+    
+    <span id="advice-form" *ngIf="form.controls['category'].value == '' && !form.controls['title'].invalid">
+      <fa-icon [icon]="faExclamation"></fa-icon>
+      Select a Priority
+   </span>
+</div>
